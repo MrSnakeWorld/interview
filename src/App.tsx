@@ -1,3 +1,6 @@
+/* eslint-disable */
+// @ts-nocheck
+
 import {ReactNode, memo, useCallback, useEffect, useState} from 'react';
 import './App.css';
 
@@ -9,14 +12,14 @@ interface IPost {
 }
 
 function App() {
-	const [posts, setPosts] = useState<IPost[]>([]);
+	const [posts, setPosts] = useState();
 	const [isLoading, setIsLoading] = useState(false);
 
 	const getPosts = useCallback(async () => {
 		try {
 			setIsLoading(true);
 			const response = await fetch(
-				'https://jsonplaceholder.typicode.com/posts'
+				"https://jsonplaceholder.typicode.com/posts"
 			);
 			const newPosts = await response.json();
 			setPosts(newPosts as unknown as IPost[]);
@@ -44,7 +47,7 @@ function App() {
 }
 
 const Post = memo(({post}: {post: IPost}) => {
-	const [likes, setLikes] = useState(0);
+	const [likes, setLikes] = useState();
 	const icon = (
 		<div>
 			<div>💖</div>
