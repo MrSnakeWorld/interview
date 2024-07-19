@@ -1,5 +1,4 @@
 /* eslint-disable */
-// @ts-nocheck
 
 import {ReactNode, memo, useCallback, useEffect, useState} from 'react';
 import './App.css';
